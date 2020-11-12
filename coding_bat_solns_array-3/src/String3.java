@@ -32,6 +32,7 @@ public class String3 {
 
 	public String withoutString(String base, String remove) {
 		
+		
 		int blen = base.length();
 		int rlen = remove.length();
 		String blow = base.toLowerCase();
@@ -41,6 +42,7 @@ public class String3 {
 		for (int j=0; j<rlen; j++) {
 		 temp+="1";
 		}
+		
 	    for(int i=0; i<blen-rlen; i++) {
 			if(blow.substring(i,i+rlen).equals(rlow)) {
 				base=base.replace(base.substring(i,i+rlen), temp);
@@ -134,12 +136,12 @@ public class String3 {
 	public int sumDigits(String str) {
 		
 		ArrayList<Integer> arr = new ArrayList<>();
-	    int sum = 0;
+		int sum = 0;
 			
 		for(int i=0; i<str.length(); i++){
-			if(Character.isDigit(str.charAt(i))) {
-				arr.add((int) str.charAt(i)-48);
-			}
+		    if(Character.isDigit(str.charAt(i))) {
+			    arr.add((int) str.charAt(i)-48);
+		    }
 		}
 		for(int j=0; j<arr.size(); j++) {
 			sum+=arr.get(j);
@@ -175,20 +177,20 @@ public class String3 {
 	public String mirrorEnds(String string){
 
 		int slen = string.length();
-	    String result = "";
+		String result = "";
 		String reversed = "";
 			  
 		for(int i=slen-1; i>=0; i--){
 			reversed+=string.charAt(i);
 		}
 		for(int j=0; j<slen; j++) {
-			if(string.charAt(j)==reversed.charAt(j)) {
-				result+=string.charAt(j);
-			}
-			if(string.charAt(j)!=reversed.charAt(j)) {
-				break;
-			}
-		}
+		    if(string.charAt(j)==reversed.charAt(j)) {
+			    result+=string.charAt(j);
+		    }
+		    if(string.charAt(j)!=reversed.charAt(j)) {
+		        break;
+		    }
+	    }
 		return result;
 	}
 	
@@ -197,7 +199,7 @@ public class String3 {
 	
 	public int maxBlock(String str) {
 		int count = 1;
-	    int temp = 1;
+		int temp = 1;
 		int blocks = 0;
 
 		for(int i=1; i<str.length(); i++) {
